@@ -1,0 +1,66 @@
+.editor-panel {
+    background: var(--color-primary);
+    padding: 15px;
+}
+
+.editor-panel.focused {
+    border: 1px solid #525252;
+    padding: 14px;
+}
+
+.editor {
+    background: var(--color-primary);
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+
+.editor .line-number {
+    padding-right: 1rem;
+    color: azure;
+    user-select: none;
+}
+
+.editor .instruction {
+    color: chocolate;
+}
+
+.editor .register {
+    color: lightblue;
+}
+
+.editor .const {
+    color: wheat;
+}
+
+.editor .comment {
+    color: darkgrey;
+}
+
+.editor .not-found {
+    color: white;
+}
+
+.cursor {
+    color: mintcream;
+    position: absolute;
+    font-weight: bold;
+    width: 0;
+    text-align: left;
+    left: 0;
+    user-select: none;
+    display: none;
+}
+
+.editor-panel.focused .cursor {
+    display: block;
+    animation: 1s blink step-end infinite;
+}
+
+@keyframes blink {
+    from, to {
+        color: white;
+    }
+    50% {
+        color: transparent;
+    }
+}
